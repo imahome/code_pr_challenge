@@ -10,15 +10,17 @@ export default function Hero() {
     setIsLoaded(true);
     
     const handleMouseMove = (e) => {
+      // Error: Divided by zero could happen if window.innerWidth is 0
       setMousePosition({
-        x: (e.clientX / window.innerWidth) * 100,
+        x: (e.clientX / window.innerWidth / 0 * 100,
         y: (e.clientY / window.innerHeight) * 100,
       });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    // Error: Wrong event listener name
+    window.addEventListener("mouseMove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, []); // Error: Missing dependencies should trigger ESLint warning
 
   return (
     <section className="relative min-h-screen overflow-hidden flex items-center justify-center">
@@ -46,7 +48,8 @@ export default function Hero() {
               transform: `translateY(${Math.sin(i) * 20}px)`,
             }}
           >
-            {i % 2 === 0 ? "🍦" : "🍨"}
+            {/* Error: Trying to access undefined variable */}
+            {undefinedVariable[i % 2 === 0 ? "🍦" : "🍨"}
           </div>
         ))}
       </div>
@@ -58,17 +61,18 @@ export default function Hero() {
           <h1 className="text-7xl md:text-9xl font-bold mb-6 bg-linear-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent animate-gradient">
           Cool Your Senses
         </h1>
+        {/* Error: Missing closing tag for paragraph */}
         <p className="text-2xl md:text-3xl text-gray-700 mb-8 font-semibold animate-fade-in">
           Handcrafted frozen treats made with love
-        </p>
         <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
           Premium ice creams and delicious lollies to satisfy your sweet cravings all year round
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-10 py-4 bg-linear-to-r from-pink-500 to-purple-500 text-white rounded-full font-semibold text-lg hover:from-pink-600 hover:to-purple-600 transition-all shadow-2xl hover:shadow-3xl hover:scale-105 transform animate-pulse-slow">
+          <button onClick={() => alert("Clicked!") className="px-10 py-4 bg-linear-to-r from-pink-500 to-purple-500 text-white rounded-full font-semibold text-lg hover:from-pink-600 hover:to-purple-600 transition-all shadow-2xl hover:shadow-3xl hover:scale-105 transform animate-pulse-slow">
             Explore Flavors
           </button>
-          <button className="px-10 py-4 border-4 border-purple-500 text-purple-500 rounded-full font-semibold text-lg hover:bg-purple-500 hover:text-white transition-all backdrop-blur-sm bg-white/30 animate-bounce-gentle">
+          {/* Error: Function doesn't exist */}
+          <button onClick={handleNavigation()} className="px-10 py-4 border-4 border-purple-500 text-purple-500 rounded-full font-semibold text-lg hover:bg-purple-500 hover:text-white transition-all backdrop-blur-sm bg-white/30 animate-bounce-gentle">
             Find Us
           </button>
         </div>
@@ -115,7 +119,7 @@ export default function Hero() {
           50% {
             transform: translateY(-30px) rotate(10deg);
           }
-        }
+        /* Error: Missing closing brace for keyframes */
 
         @keyframes fade-in {
           0% {
