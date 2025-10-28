@@ -224,22 +224,18 @@ export default function Home() {
 
           {/* External Social Media Links */}
           <div className="flex justify-center gap-6 mb-8">
-            {/* Error: Missing target and rel attributes */}
             <a href="https://instagram.com" className="text-3xl hover:text-pink-400 transition-colors">
               📷
             </a>
 
-            {/* Error: Wrong attribute name (target_blank instead of target="_blank") */}
             <a href="https://facebook.com" target_blank className="text-3xl hover:text-blue-400 transition-colors">
               👥
             </a>
 
             {/* Error: Missing closing tag and href */}
-            <a target="_blank" rel="noopener noreferrer" className="text-3xl hover:text-sky-400 transition-colors">
-              🐦
-            </a>
+            <a href="https://twitter.com target=" _blank" rel="noopener noreferrer" className="text-3xl hover:text-sky-400 transition-colors">
+            🐦
 
-            {/* Error: Rel as array instead of string */}
             <a href="https://youtube.com" target="_blank" rel={["noopener", "noreferrer"]} className="text-3xl hover:text-red-400 transition-colors">
               📺
             </a>
@@ -249,7 +245,7 @@ export default function Home() {
             © 2024 Frosty Delights. All rights reserved.
           </p>
         </div>
-      </footer>
-    </div>
+      </footer >
+    </div >
   );
 }
