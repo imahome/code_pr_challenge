@@ -1,21 +1,12 @@
 import Link from "next/link";
+import Navigation from "@/components/Navigation";
+import ProductTable from "@/components/ProductTable";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-linear-to-br from-pink-100 via-purple-50 to-blue-100">
-      {/* Header */}
-      <header className="container mx-auto px-4 py-8">
-        <nav className="flex items-center justify-between">
-          <div className="text-3xl font-bold bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-            🍦 Frosty Delights
-          </div>
-          <div className="flex gap-6 text-gray-700">
-            <a href="#flavors" className="hover:text-pink-600 transition-colors">Flavors</a>
-            <a href="#products" className="hover:text-pink-600 transition-colors">Products</a>
-            <a href="#about" className="hover:text-pink-600 transition-colors">About</a>
-          </div>
-        </nav>
-      </header>
+      {/* Updated Navigation with Icons */}
+      <Navigation />
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 text-center">
@@ -104,6 +95,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Product Comparison Table */}
+      <ProductTable />
 
       {/* Products Section */}
       <section id="products" className="bg-white py-16">
@@ -227,11 +221,30 @@ export default function Home() {
           <p className="text-gray-400 mb-6">
             Cool treats for warm hearts | Since 2024
           </p>
-          <div className="flex justify-center gap-6">
-            <a href="#" className="hover:text-pink-400 transition-colors">Instagram</a>
-            <a href="#" className="hover:text-pink-400 transition-colors">Facebook</a>
-            <a href="#" className="hover:text-pink-400 transition-colors">Twitter</a>
+          
+          {/* External Social Media Links */}
+          <div className="flex justify-center gap-6 mb-8">
+            {/* Error: Missing target and rel attributes */}
+            <a href="https://instagram.com" className="text-3xl hover:text-pink-400 transition-colors">
+              📷
+            </a>
+            
+            {/* Error: Wrong attribute name (target_blank instead of target="_blank") */}
+            <a href="https://facebook.com" target_blank className="text-3xl hover:text-blue-400 transition-colors">
+              👥
+            </a>
+            
+            {/* Error: Missing closing tag and href */}
+            <a target="_blank" rel="noopener noreferrer" className="text-3xl hover:text-sky-400 transition-colors">
+              🐦
+            </a>
+            
+            {/* Error: Rel as array instead of string */}
+            <a href="https://youtube.com" target="_blank" rel={["noopener", "noreferrer"]} className="text-3xl hover:text-red-400 transition-colors">
+              📺
+            </a>
           </div>
+          
           <p className="mt-8 text-gray-500 text-sm">
             © 2024 Frosty Delights. All rights reserved.
           </p>
