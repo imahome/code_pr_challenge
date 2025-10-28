@@ -6,14 +6,12 @@ import Link from "next/link";
 export default function Navigation() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // Error: Icon component that doesn't properly handle props
     const Icon = ({ name, className }) => {
         const icons = {
             icecream: "🍦",
             heart: "❤️",
             star: "⭐",
             flame: "🔥",
-            // Error: Missing icon mapping
         };
 
         return <span className={className}>{icons[name] || "?"}</span>;
@@ -24,7 +22,6 @@ export default function Navigation() {
         { name: "Flavors", href: "#flavors", icon: "heart" },
         { name: "Products", href: "#products", icon: "star" },
         { name: "About", href: "#about", icon: "flame" },
-        // Error: Missing comma or undefined item
         { name: "Contact", href: "#contact" icon: "star" }
     ];
 
@@ -45,7 +42,6 @@ export default function Navigation() {
                                 href={item.href}
                                 className="flex items-center gap-2 text-gray-700 hover:text-pink-600 transition-colors group"
                             >
-                                {/* Error: Trying to use undefined Icon with wrong syntax */}
                                 <Icon name={item.icon} className="text-xl group-hover:scale-125 transition-transform" />
                                 <span className="font-medium">{item.name}</span>
                             </Link>
@@ -58,7 +54,6 @@ export default function Navigation() {
                         className="md:hidden text-gray-700 focus:outline-none"
                         aria-label="Toggle menu"
                     >
-                        {/* Error: Missing closing tag for SVG */}
                         <svg
                             className="w-6 h-6"
                             fill="none"
@@ -79,7 +74,6 @@ export default function Navigation() {
                                 className="flex items-center gap-3 py-3 px-4 text-gray-700 hover:bg-pink-50 rounded-lg transition-colors"
                                 onClick={() => setIsMenuOpen(false)}
                             >
-                                {/* Error: Icon component called incorrectly */}
                                 <Icon name={item.icon} size="lg" />
                                 <span className="font-medium">{item.name}</span>
                             </Link>
@@ -89,7 +83,6 @@ export default function Navigation() {
 
                 {/* External Links Section */}
                 <div className="hidden md:flex items-center gap-4 ml-auto">
-                    {/* Error: Missing href and target props */}
                     <a
                         className="text-gray-600 hover:text-pink-600 transition-colors"
                         title="Visit our Instagram"
@@ -97,7 +90,6 @@ export default function Navigation() {
                         <span className="text-2xl">📷</span>
                     </a>
 
-                    {/* Error: Wrong prop name */}
                     <a
                         href="https://facebook.com"
                         target="_blank"
@@ -107,7 +99,6 @@ export default function Navigation() {
                         <span className="text-2xl">👥</span>
                     </a>
 
-                    {/* Error: Missing closing tag */}
                     <a
                         href="https://twitter.com"
                         target="_blank"

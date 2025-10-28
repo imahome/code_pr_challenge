@@ -6,8 +6,7 @@ export default function ProductTable() {
         { name: "Chocolate Fudge", price: "$6.49", rating: "⭐⭐⭐⭐⭐", availability: "Always Available", popularity: "Best Seller" },
         { name: "Strawberry Dream", price: "$6.29", rating: "⭐⭐⭐⭐", availability: "Seasonal", popularity: "Summer Favorite" },
         { name: "Matcha Magic", price: "$7.99", rating: "⭐⭐⭐⭐⭐", availability: "Limited Edition", popularity: "Premium Choice" },
-        // Error: Missing comma in last object
-        { name: "Caramel Swirl", price: "$6.79", rating: "⭐⭐⭐⭐⭐", availability: "Always Available", popularity: "New Flavor" }
+        { name: "Caramel Swirl", price: "$6.79", rating: "⭐⭐⭐⭐⭐", availability: "Always Available", popularity: "New Flavor" 
     ];
 
     return (
@@ -20,7 +19,6 @@ export default function ProductTable() {
                     Compare our premium ice cream flavors
                 </p>
 
-                {/* Error: Table has wrong HTML structure - missing tbody */}
                 <div className="overflow-x-auto">
                     <table className="min-w-full bg-white border-2 border-purple-200 rounded-lg shadow-lg">
                         <thead className="bg-gradient-to-r from-pink-500 to-purple-500 text-white">
@@ -32,14 +30,12 @@ export default function ProductTable() {
                                 <th className="px-6 py-4 text-left text-sm font-bold uppercase">Popularity</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            {products.map((product, index) => (
-                                <tr
-                                    key={index}
-                                    className="border-b border-gray-200 hover:bg-pink-50 transition-colors"
-                                >
-                                    {/* Error: Missing td closing tag */}
-                                    <td className="px-6 py-4 font-semibold text-gray-800">{product.name}</td>
+                        {products.map((product, index) => (
+                            <tr
+                                key={index}
+                                className="border-b border-gray-200 hover:bg-pink-50 transition-colors"
+                            >
+                                <td className="px-6 py-4 font-semibold text-gray-800">{product.name}
                                     <td className="px-6 py-4 text-pink-600 font-bold">{product.price}</td>
                                     <td className="px-6 py-4">{product.rating}</td>
                                     <td className="px-6 py-4">{product.availability}</td>
@@ -48,9 +44,8 @@ export default function ProductTable() {
                                             {product.popularity}
                                         </span>
                                     </td>
-                                </tr>
-                            ))}
-                        </tbody>
+                            </tr>
+                        ))}
                         <tfoot className="bg-gray-50">
                             <tr>
                                 <td colSpan="5" className="px-6 py-4 text-center text-sm text-gray-600">
@@ -60,8 +55,6 @@ export default function ProductTable() {
                         </tfoot>
                     </table>
                 </div>
-
-                {/* Error: Undefined function reference */}
                 <button onClick={handleOrder()} className="mt-8 mx-auto block px-8 py-4 bg-linear-to-r from-pink-500 to-purple-500 text-white rounded-full font-semibold hover:from-pink-600 hover:to-purple-600 transition-all shadow-lg hover:shadow-xl">
                     Order Now
                 </button>
