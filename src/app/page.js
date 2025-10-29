@@ -1,10 +1,11 @@
 import Link from "next/link";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-linear-to-br from-pink-100 via-purple-50 to-blue-100">
+    <div className="min-h-screen">
       {/* Header */}
-      <header className="container mx-auto px-4 py-8">
+      <header className="absolute top-0 left-0 right-0 z-20 container mx-auto px-4 py-8">
         <nav className="flex items-center justify-between">
           <div className="text-3xl font-bold bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
             🍦 Frosty Delights
@@ -17,90 +18,76 @@ export default function Home() {
         </nav>
       </header>
 
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16 text-center">
-        <h1 className="text-6xl font-bold mb-6 bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-          Cool Your Senses
-        </h1>
-        <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-          Handcrafted frozen treats made with love. Premium ice creams and delicious lollies
-          to satisfy your sweet cravings all year round.
-        </p>
-        <div className="flex gap-4 justify-center">
-          <button className="px-8 py-3 bg-linear-to-r from-pink-500 to-purple-500 text-white rounded-full font-semibold hover:from-pink-600 hover:to-purple-600 transition-all shadow-lg hover:shadow-xl">
-            Explore Flavors
-          </button>
-          <button className="px-8 py-3 border-2 border-purple-500 text-purple-500 rounded-full font-semibold hover:bg-purple-500 hover:text-white transition-all">
-            Find Us
-          </button>
-        </div>
-      </section>
+      {/* New Hero Component */}
+      <Hero BackgroundColour='Blue' />
 
       {/* Flavors Section */}
-      <section id="flavors" className="container mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
-          Our Signature Flavors
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Flavor Cards */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-            <div className="w-20 h-20 bg-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
-              🍓
+      <section id="flavors" className="bg-linear-to-br from-purple-50 to-pink-50 py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+            Our Signature Flavors
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Flavor Cards */}
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+              <div className="w-20 h-20 bg-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
+                🍓
+              </div>
+              <h3 className="text-2xl font-bold text-center mb-2">Strawberry Dream</h3>
+              <p className="text-gray-600 text-center">
+                Fresh strawberries swirled in creamy vanilla ice cream
+              </p>
             </div>
-            <h3 className="text-2xl font-bold text-center mb-2">Strawberry Dream</h3>
-            <p className="text-gray-600 text-center">
-              Fresh strawberries swirled in creamy vanilla ice cream
-            </p>
-          </div>
 
-          <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-            <div className="w-20 h-20 bg-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
-              🌊
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+              <div className="w-20 h-20 bg-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
+                🌊
+              </div>
+              <h3 className="text-2xl font-bold text-center mb-2">Ocean Breeze</h3>
+              <p className="text-gray-600 text-center">
+                Refreshing blueberry with coconut milk base
+              </p>
             </div>
-            <h3 className="text-2xl font-bold text-center mb-2">Ocean Breeze</h3>
-            <p className="text-gray-600 text-center">
-              Refreshing blueberry with coconut milk base
-            </p>
-          </div>
 
-          <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-            <div className="w-20 h-20 bg-yellow-500 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
-              🍌
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+              <div className="w-20 h-20 bg-yellow-500 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
+                🍌
+              </div>
+              <h3 className="text-2xl font-bold text-center mb-2">Banana Split</h3>
+              <p className="text-gray-600 text-center">
+                Rich banana ice cream with chocolate chunks
+              </p>
             </div>
-            <h3 className="text-2xl font-bold text-center mb-2">Banana Split</h3>
-            <p className="text-gray-600 text-center">
-              Rich banana ice cream with chocolate chunks
-            </p>
-          </div>
 
-          <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-            <div className="w-20 h-20 bg-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
-              🍇
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+              <div className="w-20 h-20 bg-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
+                🍇
+              </div>
+              <h3 className="text-2xl font-bold text-center mb-2">Purple Passion</h3>
+              <p className="text-gray-600 text-center">
+                Exotic blackberry and lavender fusion
+              </p>
             </div>
-            <h3 className="text-2xl font-bold text-center mb-2">Purple Passion</h3>
-            <p className="text-gray-600 text-center">
-              Exotic blackberry and lavender fusion
-            </p>
-          </div>
 
-          <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-            <div className="w-20 h-20 bg-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
-              🥭
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+              <div className="w-20 h-20 bg-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
+                🥭
+              </div>
+              <h3 className="text-2xl font-bold text-center mb-2">Tropical Mango</h3>
+              <p className="text-gray-600 text-center">
+                Sweet mango with a hint of passion fruit
+              </p>
             </div>
-            <h3 className="text-2xl font-bold text-center mb-2">Tropical Mango</h3>
-            <p className="text-gray-600 text-center">
-              Sweet mango with a hint of passion fruit
-            </p>
-          </div>
 
-          <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-            <div className="w-20 h-20 bg-emerald-500 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
-              🍵
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+              <div className="w-20 h-20 bg-emerald-500 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
+                🍵
+              </div>
+              <h3 className="text-2xl font-bold text-center mb-2">Matcha Magic</h3>
+              <p className="text-gray-600 text-center">
+                Premium Japanese matcha with vanilla
+              </p>
             </div>
-            <h3 className="text-2xl font-bold text-center mb-2">Matcha Magic</h3>
-            <p className="text-gray-600 text-center">
-              Premium Japanese matcha with vanilla
-            </p>
           </div>
         </div>
       </section>
